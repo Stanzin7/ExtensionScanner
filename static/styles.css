@@ -439,3 +439,22 @@ header h2 {
     display: block;
   }
 }
+/* ChatBot Typing Indicator */
+.chatbox .typing p {
+  color: #000;
+  background: #f2f2f2;
+  font-style: italic;
+  animation: blinkingText 1.2s infinite;
+}
+
+@keyframes blinkingText {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
