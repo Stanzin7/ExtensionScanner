@@ -2,8 +2,15 @@ import os
 from flask import Flask, render_template, request, jsonify
 from chatgpt import get_response, init_chatbot
 
-init_chatbot()
 app = Flask(__name__)
+# Define a global variable to keep track of chatbot initialization
+chatbot_initialized = False
+try:
+    init_chatbot()
+    chatbot_initialized = True
+except Exception as e:
+    print(f"Error initializing chatbot: {e}")
+
 
 @app.route('/')
 def index():
