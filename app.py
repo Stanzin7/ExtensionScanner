@@ -4,6 +4,9 @@ from chatgpt import get_response, init_chatbot
 
 app = Flask(__name__)
 # Define a global variable to keep track of chatbot initialization
+@app.route('/')
+def index():
+    return render_template('index.html')
 chatbot_initialized = False
 try:
     init_chatbot()
@@ -12,9 +15,6 @@ except Exception as e:
     print(f"Error initializing chatbot: {e}")
 
 
-@app.route('/')
-def index():
-    return render_template('index.html')
 
 @app.route('/ask', methods=['POST'])
 def ask():
