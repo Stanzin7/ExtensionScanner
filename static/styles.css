@@ -458,3 +458,48 @@ header h2 {
     opacity: 0.2;
   }
 }
+
+#loading {
+  display: none;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000; /* to ensure it's above other elements */
+}
+.spinner {
+  border: 10px solid transparent;
+  border-top-color: #3498db; /* Initial color at the top */
+  border-radius: 50%;
+  width: 50px; /* Increased size for better visibility */
+  height: 50px;
+  animation: spin 1.5s linear infinite, colors 6s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Additional animation for color transition */
+@keyframes colors {
+  0% {
+    border-top-color: #3498db;
+  }
+  25% {
+    border-top-color: #e74c3c;
+  }
+  50% {
+    border-top-color: #f39c12;
+  }
+  75% {
+    border-top-color: #27ae60;
+  }
+  100% {
+    border-top-color: #3498db;
+  }
+}

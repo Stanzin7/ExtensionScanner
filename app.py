@@ -5,6 +5,7 @@ from chatgpt import get_response, init_chatbot
 init_chatbot()
 app = Flask(__name__)
 
+
 @app.route('/')
 def index():
     return render_template('index.html')

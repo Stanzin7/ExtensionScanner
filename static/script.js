@@ -15,6 +15,15 @@ jQuery(document).ready(function () {
 
   // Handle send button click
   $("#send-btn").on("click", function (e) {
+    // Show the loading spinner
+    $("#loading").show();
+
+    // Simulate sending the message and receiving a response from the bot
+    setTimeout(function () {
+      // Append the user message and bot's response to the chatbox
+      // Hide the loading spinner
+      $("#loading").hide();
+    }, 2000); // This is a simulated delay of 2 seconds. Replace with actual API call duration.
     sendMessage();
   });
 });
