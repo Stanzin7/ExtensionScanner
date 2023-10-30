@@ -27,25 +27,26 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 45px;
+  margin-bottom: 25px;
 }
 .d-flex .browser-name {
   font-size: 40px;
 }
 .set-ms-3 {
-  margin-left: 18px;
+  margin-left: 15px;
 }
 .set-relative {
   position: relative;
 }
 .set-relative.set-input-width {
   width: 720px;
+  margin-left: 25px;
 }
 .set-relative.set-input-width input {
   width: 92%;
   display: block;
   flex-shrink: 0;
-  background-color: #fff;
+  background-color: #42414d;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   border: 1px solid transparent;
   border-radius: 8px;
@@ -54,6 +55,7 @@ body {
   font-size: 15px;
   outline: none;
 }
+
 .set-input-width label {
   position: absolute;
   top: 12px;
@@ -100,6 +102,7 @@ body {
 }
 .text-light {
   color: #fff;
+  margin-left: 25px;
 }
 .text-light a {
   color: #6060cf;
@@ -199,7 +202,12 @@ hr {
   margin: 4px 0px;
   border: 1px solid #656565;
 }
+
 @media (max-width: 767px) {
+  .set-relative.set-input-width .google-logo {
+    float: left;
+    margin-right: 10px; /* Adds some space between the logo and the input field */
+  }
   .set-relative.set-input-width {
     width: 100%;
   }
@@ -251,8 +259,6 @@ hr {
     margin: 12px;
   }
 }
-
-/* Styles for the chatbox */
 .chatbot-toggler {
   position: fixed;
   bottom: 30px;
@@ -308,13 +314,13 @@ body.show-chatbot .chatbot {
   padding: 16px 0;
   position: relative;
   text-align: center;
-  color: #fff;
-  background: #4f4e5d;
+  color: #ffffff;
+  background: #151515;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 .chatbot header span {
   position: absolute;
-  right: 15px;
+  right: 50px;
   top: 50%;
   display: none;
   cursor: pointer;
@@ -322,7 +328,7 @@ body.show-chatbot .chatbot {
 }
 header h2 {
   font-size: 1.4rem;
-  margin-right: 30px;
+  margin-right: 35px;
 }
 .chatbot .chatbox {
   overflow-y: auto;
@@ -351,15 +357,27 @@ header h2 {
 .chatbox .incoming span {
   width: 32px;
   height: 32px;
-  color: #fff;
+  color: rgba(50, 50, 50, 1);
   cursor: default;
   text-align: center;
   line-height: 32px;
   align-self: flex-end;
-  background: #724ae8;
+  background: #f2f2f2;
   border-radius: 4px;
   margin: 0 10px 7px 0;
 }
+/* .chatbox .outgoing span {
+  width: 32px;
+  height: 32px;
+  color: #2a2a2e;
+  cursor: default;
+  text-align: center;
+  line-height: 32px;
+  align-self: flex-end;
+  background: #aeaeae;
+  border-radius: 4px;
+  margin: 0 10px 7px 0;
+} */
 .chatbox .chat p {
   white-space: pre-wrap;
   padding: 12px 16px;
@@ -367,7 +385,7 @@ header h2 {
   max-width: 75%;
   color: #fff;
   font-size: 0.95rem;
-  background: #724ae8;
+  background: RGBA(255, 87, 34, 1);
 }
 .chatbox .incoming p {
   border-radius: 10px 10px 10px 0;
@@ -380,6 +398,16 @@ header h2 {
   color: #000;
   background: #f2f2f2;
 }
+/* chat incoming*/
+Copy code .chat.incoming {
+  display: flex;
+  align-items: center; /* Align vertically center */
+}
+.message-container {
+  display: flex;
+  align-items: center; /* Align vertically center */
+}
+
 .chatbot .chat-input {
   display: flex;
   gap: 5px;
@@ -391,20 +419,23 @@ header h2 {
   border-top: 1px solid #ddd;
 }
 
-.chat-input textarea {
+.chat-input input {
+  flex-grow: 1;
+  color: black;
   height: 55px;
   width: 100%;
   border: none;
   outline: none;
   resize: none;
-  max-height: 180px;
+  /* max-height: 180px; */
   padding: 15px 15px 15px 0;
   font-size: 0.95rem;
+  overflow: hidden;
 }
 
 .chat-input span {
   align-self: flex-end;
-  color: #724ae8;
+  color: #030303;
   cursor: pointer;
   height: 55px;
   display: flex;
@@ -457,23 +488,6 @@ header h2 {
   100% {
     opacity: 0.2;
   }
-}
-
-#loading {
-  display: none;
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1000; /* to ensure it's above other elements */
-}
-.spinner {
-  border: 10px solid transparent;
-  border-top-color: #3498db; /* Initial color at the top */
-  border-radius: 50%;
-  width: 50px; /* Increased size for better visibility */
-  height: 50px;
-  animation: spin 1.5s linear infinite, colors 6s ease-in-out infinite;
 }
 
 @keyframes spin {

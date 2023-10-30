@@ -24,6 +24,7 @@
   </head>
   <body>
     <!-- Mozilla UI Code -->
+    <!-- Mozilla UI Code -->
     <div class="set-gear-icon">
       <div class="dropdown">
         <button class="dropbtn"><i class="fa-solid fa-gear"></i></button>
@@ -62,7 +63,12 @@
           </div>
         </div>
         <div class="set-relative set-input-width">
-          <label><img src="/static/images/favicon.ico" alt="" /></label>
+          <label
+            ><img
+              class="google-logo"
+              src="/static/images/favicon.ico"
+              alt="Google-search-engine"
+          /></label>
           <input
             type="text"
             name=""
@@ -270,25 +276,24 @@
     </button>
     <div class="chatbot">
       <header>
-        <h2>FireExtend AssistAI</h2>
+        <h2>FireExtend Chatbot</h2>
         <span class="close-btn material-symbols-outlined">close</span>
       </header>
+
       <ul class="chatbox">
         <li class="chat incoming">
           <span class="material-symbols-outlined">smart_toy</span>
           <p>Hi there 👋<br />Describe the Firefox Add-on you need</p>
         </li>
       </ul>
-      <div id="loading" style="display: none">
-        <div class="spinner"></div>
-      </div>
+
       <div class="chat-input">
-        <textarea
+        <input
           id="user_input"
           placeholder="Enter a message..."
           spellcheck="false"
           required
-        ></textarea>
+        />
         <span id="send-btn" class="material-symbols-rounded">send</span>
       </div>
     </div>
