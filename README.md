@@ -1,4 +1,5 @@
 <h1 align="center">ExtensionScanner</h1>
+<h1 align="center">ExtensionScanner</h1>
 
 <img width="1478" height="1124" alt="Screenshot 2026-02-04 at 6 57 13 PM" src="https://github.com/user-attachments/assets/b20842c2-1c8d-4687-aa78-670ee08aef52" />
 <br> </br>

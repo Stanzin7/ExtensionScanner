@@ -1,29 +1,23 @@
-# ExtensionShield Docker Compose Configuration
-# For BlackHat Arsenal 2026 Demo
+# ExtensionScanner Docker Compose Configuration
 
 services:
-  extension-shield:
+  extension-scanner:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: extension-shield
+    container_name: extension-scanner
     ports:
       - "8007:8007"
     volumes:
-      # Persist downloaded extensions
       - ./extensions_storage:/app/extensions_storage
-      # Persist SQLite database
       - ./data:/app/data
     environment:
-      # LLM Configuration (OpenAI default)
       - LLM_PROVIDER=${LLM_PROVIDER:-openai}
       - LLM_MODEL=${LLM_MODEL:-gpt-4o}
       - OPENAI_API_KEY=${OPENAI_API_KEY}
-      # Optional: VirusTotal integration
       - VIRUSTOTAL_API_KEY=${VIRUSTOTAL_API_KEY:-}
-      # Storage paths (container paths)
       - EXTENSION_STORAGE_PATH=/app/extensions_storage
-      - DATABASE_PATH=/app/data/extension-shield.db
+      - DATABASE_PATH=/app/data/extension-scanner.db
     env_file:
       - .env
     restart: unless-stopped

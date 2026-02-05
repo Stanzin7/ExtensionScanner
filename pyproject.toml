@@ -1,7 +1,7 @@
 [project]
-name = "extension-shield"
+name = "extension-scanner"
 version = "0.1.0"
-description = "Enterprise Chrome Extension Governance & Security Analysis - extensionshield.com"
+description = "Enterprise Chrome Extension Security & Governance Platform"
 readme = "README.md"
 requires-python = ">=3.11.13"
 dependencies = [
@@ -22,7 +22,6 @@ dependencies = [
     "uvicorn>=0.32.0",
     "vt-py>=0.18.0",
     "reportlab>=4.0.0",
-    # Optional (only used if SUPABASE_URL + SUPABASE_*_KEY are set)
     "supabase>=2.0.0",
 ]
 
@@ -39,7 +38,7 @@ dev = [
 line-length = 100
 
 [project.scripts]
-extension-shield = "extension_shield.cli.main:main"
+extension-scanner = "extension_shield.cli.main:main"
 
 [build-system]
 requires = ["hatchling"]

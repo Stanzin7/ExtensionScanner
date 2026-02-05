@@ -1,6 +1,6 @@
 #!/bin/bash
-echo "🔄 Force refreshing ExtensionShield frontend..."
-cd /Users/stanzin/Desktop/ExtensionShield/frontend
+echo "🔄 Force refreshing ExtensionScanner frontend..."
+cd /Users/stanzin/Desktop/ExtensionScanner/frontend
 
 # Kill any running dev servers
 echo "Stopping any running dev servers..."
