@@ -1,0 +1,29 @@
+# ExtensionScanner Docker Compose Configuration
+
+services:
+  extension-scanner:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: extension-scanner
+    ports:
+      - "8007:8007"
+    volumes:
+      - ./extensions_storage:/app/extensions_storage
+      - ./data:/app/data
+    environment:
+      - LLM_PROVIDER=${LLM_PROVIDER:-openai}
+      - LLM_MODEL=${LLM_MODEL:-gpt-4o}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - VIRUSTOTAL_API_KEY=${VIRUSTOTAL_API_KEY:-}
+      - EXTENSION_STORAGE_PATH=/app/extensions_storage
+      - DATABASE_PATH=/app/data/extension-scanner.db
+    env_file:
+      - .env
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8007/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
