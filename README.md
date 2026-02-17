@@ -26,4 +26,6 @@ Methodology reference: https://extensionshield.com/research/methodology
 - Evidence-backed stats and reports
 - API as a service (enterprise-friendly)
 
+Quite a progress we have made in last month. Thanks for QA and help guys we will open soon
+<img width="1028" height="197" alt="Screenshot 2026-02-17 at 1 27 31 PM" src="https://github.com/user-attachments/assets/e2333d36-fa69-49fc-b901-43a86fc74839" />
 <p align="center"><strong>Just vibing ☕️</strong></p>
